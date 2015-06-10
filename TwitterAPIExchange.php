@@ -174,6 +174,16 @@ class TwitterAPIExchange
     }
     
     /**
+    * Resets the fields to allow a new query
+    * with different method
+    */
+    public function resetFields() {
+        $this->postfields = null;
+        $this->getfield = null;
+        return $this;
+    }
+    
+    /**
      * Build the Oauth object using params set in construct and additionals
      * passed to this method. For v1.1, see: https://dev.twitter.com/docs/api/1.1
      *
