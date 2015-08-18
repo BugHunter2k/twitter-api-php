@@ -172,16 +172,7 @@ class TwitterAPIExchange
     {
         return $this->postfields;
     }
-    
-    /**
-    * Resets the fields to allow a new query
-    * with different method
-    */
-    public function resetFields() {
-        $this->postfields = null;
-        $this->getfield = null;
-        return $this;
-    }
+
     
     /**
      * Build the Oauth object using params set in construct and additionals
@@ -307,7 +298,11 @@ class TwitterAPIExchange
         }
 
         curl_close($feed);
-
+    
+        // Resets the fields to allow a new query with different method
+        $this->postfields = null;
+        $this->getfield = null;
+        
         return $json;
     }
     
