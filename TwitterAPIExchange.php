@@ -172,7 +172,6 @@ class TwitterAPIExchange
     {
         return $this->postfields;
     }
-
     
     /**
      * Build the Oauth object using params set in construct and additionals
