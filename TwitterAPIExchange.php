@@ -298,6 +298,10 @@ class TwitterAPIExchange
 
         curl_close($feed);
 
+        // Resets the fields to allow a new query with different method
+        $this->postfields = null;
+        $this->getfield = null;
+
         return $json;
     }
     
